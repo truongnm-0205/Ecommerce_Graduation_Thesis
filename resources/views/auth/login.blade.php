@@ -7,8 +7,8 @@
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="/" class="link">home</a></li>
-					<li class="item-link"><span>login</span></li>
+					<li class="item-link"><a href="/" class="link">trang chủ</a></li>
+					<li class="item-link"><span>Đăng nhập</span></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -20,24 +20,24 @@
 								<form name="frm-login" method="POST" action="{{route('login')}}">
 									@csrf
                                     <fieldset class="wrap-title">
-										<h3 class="form-title">Log in to your account</h3>										
+										<h3 class="form-title">Đăng nhập bằng tài khoản của bạn</h3>										
 									</fieldset>
 									<fieldset class="wrap-input">
-										<label for="frm-login-uname">Email Address:</label>
-										<input type="text" id="frm-login-uname" name="email" placeholder="Type your email address" value="{{old('email')}}" required autofocus>
+										<label for="frm-login-uname">Email:</label>
+										<input type="text" id="frm-login-uname" name="email" placeholder="Nhập địa chỉ email" value="{{old('email')}}" required autofocus>
 									</fieldset>
 									<fieldset class="wrap-input">
-										<label for="frm-login-pass">Password:</label>
+										<label for="frm-login-pass">Mật khẩu:</label>
 										<input type="password" id="frm-login-pass" name="password" placeholder="************" required autocomplete="current-password">
 									</fieldset>
 									
 									<fieldset class="wrap-input">
 										<label class="remember-field">
-											<input class="frm-input " name="remember" id="rememberme" value="forever" type="checkbox"><span>Remember me</span>
+											<input class="frm-input " name="remember" id="rememberme" value="forever" type="checkbox"><span>Nhớ mật khẩu</span>
 										</label>
-										<a class="link-function left-position" href="{{route('password.request')}}" title="Forgotten password?">Forgotten password?</a>
+										<a class="link-function left-position" href="{{route('password.request')}}" title="Forgotten password?">Bạn quên mật khẩu?</a>
 									</fieldset>
-									<input type="submit" class="btn btn-submit" value="Login" name="submit">
+									<input type="submit" class="btn btn-submit" value="Đăng nhập" name="submit">
 								</form>
 							</div>												
 						</div>

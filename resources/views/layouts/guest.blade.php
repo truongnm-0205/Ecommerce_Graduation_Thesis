@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>	
+	<title>Trang chủ</title>	
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
@@ -99,7 +99,7 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="index.html" class="link-to-home"><img src="{{asset('assets/images/hedspi13.jpg')}}" alt="mercado"></a>
+							<a href="/" class="link-to-home"><img src="{{asset('assets/images/hedspi13.jpg')}}" alt="mercado"></a>
 						</div>
 
 						<div class="wrap-search center-section">
@@ -131,10 +131,10 @@
 								</a>
 							</div>
 							<div class="wrap-icon-section minicart">
-								<a href="#" class="link-direction">
+								<a href="/" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
-										<span class="index">4 sản phẩm</span>
+										<span class="index">0 sản phẩm</span>
 										<span class="title">Giỏ hàng</span>
 									</div>
 								</a>
@@ -174,13 +174,13 @@
 									<a href="about-us.html" class="link-term mercado-item-title">Về chúng tôi</a>
 								</li>
 								<li class="menu-item">
-									<a href="/shop" class="link-term mercado-item-title">Cửa hàng</a>
+									<a href="/shop.html" class="link-term mercado-item-title">Cửa hàng</a>
 								</li>
 								<li class="menu-item">
 									<a href="/cart" class="link-term mercado-item-title">Giỏ hàng</a>
 								</li>
 								<li class="menu-item">
-									<a href="/checkout" class="link-term mercado-item-title">Thanh toán</a>
+									<a href="/checkout.html" class="link-term mercado-item-title">Thanh toán</a>
 								</li>
 								<li class="menu-item">
 									<a href="contact-us.html" class="link-term mercado-item-title">Liên hệ</a>

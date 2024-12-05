@@ -12,7 +12,7 @@ class HeaderSearchComponent extends Component
     public $product_cat_id;
 
     public function mount(){
-        $this->product_cat = 'All category';
+        $this->product_cat = 'Tất cả';
         $this->fill(request()->only('search','product_cat','product_cat_id'));
     }
 

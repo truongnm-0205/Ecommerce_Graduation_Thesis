@@ -12,8 +12,8 @@
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="/" class="link">home</a></li>
-					<li class="item-link"><span>detail</span></li>
+					<li class="item-link"><a href="/" class="link">trang chủ</a></li>
+					<li class="item-link"><span>chi tiết sách</span></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -40,7 +40,7 @@
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
-                                <a href="#" class="count-review">(05 review)</a>
+                                <a href="#" class="count-review">(05 đánh giá)</a>
                             </div>
                             <h2 class="product-name">{{$product->name}}</h2>
                             <div class="short-desc">
@@ -58,10 +58,14 @@
                             <div class="wrap-price"><span class="product-price">${{$product->regular_price}}</span></div>
                             @endif
 							<div class="stock-info in-stock">
-                                <p class="availability">Availability: <b>{{$product->stock_status}}</b></p>
+								@if($product->stock_status == 'instock')
+                                <p class="availability">Tình trạng: <b>Còn hàng</b></p>
+								@else
+								<p class="availability">Tình trạng: <b>Hết hàng</b></p>
+								@endif
                             </div>
                             <div class="quantity">
-                            	<span>Quantity:</span>
+                            	<span>Số lượng:</span>
 								<div class="quantity-input">
 									<input type="text" name="product-quatity" value="1" data-max="120" pattern="[0-9]*" >
 									
@@ -71,21 +75,21 @@
 							</div>
 							<div class="wrap-butons">
 								@if($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
-								<a href="" class="btn add-to-cart" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->sale_price}})">Add to Cart</a>
+								<a href="" class="btn add-to-cart" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->sale_price}})">Thêm vào giỏ hàng</a>
 								@else
-								<a href="" class="btn add-to-cart" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})">Add to Cart</a>
+								<a href="" class="btn add-to-cart" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})">Thêm vào giỏ hàng</a>
 								@endif
 								<div class="wrap-btn">
-                                    <a href="#" class="btn btn-compare">Add Compare</a>
-                                    <a href="#" class="btn btn-wishlist">Add Wishlist</a>
+                                    <a href="#" class="btn btn-compare">So sách</a>
+                                    <a href="#" class="btn btn-wishlist">Thích</a>
                                 </div>
 							</div>
 						</div>
 						<div class="advance-info">
 							<div class="tab-control normal">
-								<a href="#description" class="tab-control-item active">description</a>
-								<a href="#add_infomation" class="tab-control-item">Addtional Infomation</a>
-								<a href="#review" class="tab-control-item">Reviews</a>
+								<a href="#description" class="tab-control-item active">mô tả</a>
+								<a href="#add_infomation" class="tab-control-item">Thông tin bổ sung</a>
+								<a href="#review" class="tab-control-item">Đánh giá</a>
 							</div>
 							<div class="tab-contents">
 								<div class="tab-content-item active" id="description">
@@ -95,13 +99,7 @@
 									<table class="shop_attributes">
 										<tbody>
 											<tr>
-												<th>Weight</th><td class="product_weight">1 kg</td>
-											</tr>
-											<tr>
-												<th>Dimensions</th><td class="product_dimensions">12 x 15 x 23 cm</td>
-											</tr>
-											<tr>
-												<th>Color</th><td><p>Black, Blue, Grey, Violet, Yellow</p></td>
+												<th>Trọng lượng</th><td class="product_weight">100 g</td>
 											</tr>
 										</tbody>
 									</table>
@@ -111,7 +109,7 @@
 									<div class="wrap-review-form">
 										
 										<div id="comments">
-											<h2 class="woocommerce-Reviews-title">01 review for <span>Radiant-360 R6 Chainsaw Omnidirectional [Orage]</span></h2>
+											<h2 class="woocommerce-Reviews-title">01 đánh giá cho <span>{{$product->name}}</span></h2>
 											<ol class="commentlist">
 												<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">
 													<div id="comment-20" class="comment_container"> 
@@ -123,10 +121,10 @@
 															<p class="meta"> 
 																<strong class="woocommerce-review__author">admin</strong> 
 																<span class="woocommerce-review__dash">–</span>
-																<time class="woocommerce-review__published-date" datetime="2008-02-14 20:00" >Tue, Aug 15,  2017</time>
+																<time class="woocommerce-review__published-date" datetime="2022-07-14 20:00" >Thứ 6, Ngày 15 tháng 7 năm 2022</time>
 															</p>
 															<div class="description">
-																<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+																<p>Sách vô cùng tuyết vời và chất lượng</p>
 															</div>
 														</div>
 													</div>
@@ -140,10 +138,10 @@
 
 													<form action="#" method="post" id="commentform" class="comment-form" novalidate="">
 														<p class="comment-notes">
-															<span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
+															<span id="email-notes">Địa chỉ email của bạn sẽ không bị công khai.</span>Các trường bắt buộc được đánh dấu <span class="required">*</span>
 														</p>
 														<div class="comment-form-rating">
-															<span>Your rating</span>
+															<span>Đánh giá của bạn</span>
 															<p class="stars">
 																
 																<label for="rated-1"></label>
@@ -159,7 +157,7 @@
 															</p>
 														</div>
 														<p class="comment-form-author">
-															<label for="author">Name <span class="required">*</span></label> 
+															<label for="author">Tên <span class="required">*</span></label> 
 															<input id="author" name="author" type="text" value="">
 														</p>
 														<p class="comment-form-email">
@@ -167,12 +165,12 @@
 															<input id="email" name="email" type="email" value="" >
 														</p>
 														<p class="comment-form-comment">
-															<label for="comment">Your review <span class="required">*</span>
+															<label for="comment">Đánh giá của bạn <span class="required">*</span>
 															</label>
 															<textarea id="comment" name="comment" cols="45" rows="8"></textarea>
 														</p>
 														<p class="form-submit">
-															<input name="submit" type="submit" id="submit" class="submit" value="Submit">
+															<input name="submit" type="submit" id="submit" class="submit" value="Gửi">
 														</p>
 													</form>
 
@@ -196,9 +194,9 @@
 									<a class="link-to-service" href="#">
 										<i class="fa fa-truck" aria-hidden="true"></i>
 										<div class="right-content">
-											<b class="title">Free Shipping</b>
-											<span class="subtitle">On Oder Over $99</span>
-											<p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
+											<b class="title">Miễn phí vận chuyển</b>
+											<span class="subtitle">Cho các đơn hàng trên $99</span>
+											<p class="desc"></p>
 										</div>
 									</a>
 								</li>
@@ -207,9 +205,9 @@
 									<a class="link-to-service" href="#">
 										<i class="fa fa-gift" aria-hidden="true"></i>
 										<div class="right-content">
-											<b class="title">Special Offer</b>
-											<span class="subtitle">Get a gift!</span>
-											<p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
+											<b class="title">Khuyến mãi đặc biệt</b>
+											<span class="subtitle">Nhận một món quà</span>
+											<p class="desc"></p>
 										</div>
 									</a>
 								</li>
@@ -218,9 +216,9 @@
 									<a class="link-to-service" href="#">
 										<i class="fa fa-reply" aria-hidden="true"></i>
 										<div class="right-content">
-											<b class="title">Order Return</b>
-											<span class="subtitle">Return within 7 days</span>
-											<p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
+											<b class="title">Hoàn trả đơn hàng</b>
+											<span class="subtitle">Được hoàn trả trong 7 ngày</span>
+											<p class="desc"></p>
 										</div>
 									</a>
 								</li>
@@ -229,7 +227,7 @@
 					</div><!-- Categories widget-->
 
 					<div class="widget mercado-widget widget-product">
-						<h2 class="widget-title">Popular Products</h2>
+						<h2 class="widget-title">Sách phổ biến</h2>
 						<div class="widget-content">
 							<ul class="products">
                                 @foreach($popular_products as $p_product)
@@ -255,9 +253,9 @@
 
 				</div><!--end sitebar-->
 
-				<div class="single-advance-box col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<div class="wrap-show-advance-info-box style-1 box-in-site">
-						<h3 class="title-box">Related Products</h3>
+				<div class="single-advance-box col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+					<div class="wrap-show-advance-info-box style-1 box-in-site " style="display:block">
+						<h3 class="title-box">Sách có liên quan</h3>
 						<div class="wrap-products">
 							<div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
                                 @foreach($related_products as $r_product)
@@ -267,10 +265,10 @@
 											<figure><img src="{{asset('assets/images/products/'.$r_product->image)}}" width="214" height="214" alt="{{$r_product->name}}"></figure>
 										</a>
 										<div class="group-flash">
-											<span class="flash-item new-label">new</span>
+											<span class="flash-item new-label">Mới</span>
 										</div>
 										<div class="wrap-btn">
-											<a href="#" class="function-link">quick view</a>
+											<a href="#" class="function-link">Xem nhanh</a>
 										</div>
 									</div>
 									<div class="product-info">

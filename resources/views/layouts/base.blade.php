@@ -200,7 +200,7 @@ p.text-sm.text-gray-700.leading-5 {
 								</a>
 							</div>
 							<div class="wrap-icon-section minicart">
-								<a href="#" class="link-direction">
+								<a href="/cart" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
 										@if(Cart::count() >0)
@@ -245,13 +245,13 @@ p.text-sm.text-gray-700.leading-5 {
 									<a href="about-us.html" class="link-term mercado-item-title">Về chúng tôi</a>
 								</li>
 								<li class="menu-item">
-									<a href="/shop" class="link-term mercado-item-title">Cửa hàng</a>
+									<a href="/shop.html" class="link-term mercado-item-title">Cửa hàng</a>
 								</li>
 								<li class="menu-item">
 									<a href="/cart" class="link-term mercado-item-title">Giỏ hàng</a>
 								</li>
 								<li class="menu-item">
-									<a href="/checkout" class="link-term mercado-item-title">Thanh toán</a>
+									<a href="/checkout.html" class="link-term mercado-item-title">Thanh toán</a>
 								</li>
 								<li class="menu-item">
 									<a href="contact-us.html" class="link-term mercado-item-title">Liên hệ</a>

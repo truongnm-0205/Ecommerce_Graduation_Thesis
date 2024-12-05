@@ -19,7 +19,7 @@
 			</div>
 
 			<!--BANNER-->
-			<div class="wrap-banner style-twin-default">
+			<!-- <div class="wrap-banner style-twin-default">
 				<div class="banner-item">
 					<a href="#" class="link-banner banner-effect-1">
 						<figure><img src="{{asset('assets/images/home-1-banner-1.jpg')}}" alt="" width="580" height="190"></figure>
@@ -30,12 +30,12 @@
 						<figure><img src="{{asset('assets/images/home-1-banner-2.jpg')}}" alt="" width="580" height="190"></figure>
 					</a>
 				</div>
-			</div>
+			</div> -->
 
 			<!--On Sale-->
 			@if($sproducts->count() > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
-			<div class="wrap-show-advance-info-box style-1 has-countdown">
-				<h3 class="title-box">On Sale</h3>
+			<div class="wrap-show-advance-info-box style-1 has-countdown" style="display:block">
+				<h3 class="title-box">Đang giảm giá</h3>
 				<div class="wrap-countdown mercado-countdown" data-expire="{{Carbon\Carbon::parse($sale->sale_date)->format('Y/m/d h:m:s')}}"></div>
 				<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 					@foreach($sproducts as $sproduct)
@@ -61,13 +61,8 @@
 			@endif
 
 			<!--Latest Products-->
-			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Latest Products</h3>
-				<div class="wrap-top-banner">
-					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="{{asset('assets/images/digital-electronic-banner.jpg')}}" width="1170" height="240" alt=""></figure>
-					</a>
-				</div>
+			<div class="wrap-show-advance-info-box style-1" style="display:block">
+				<h3 class="title-box">Sách mới nhất</h3>
 				<div class="wrap-products">
 					<div class="wrap-product-tab tab-style-1">						
 						<div class="tab-contents">
@@ -80,10 +75,10 @@
 												<figure><img src="{{asset('assets/images/products/'.$lproduct->image)}}" width="800" height="800" alt="{{$lproduct->name}}"></figure>
 											</a>
 											<div class="group-flash">
-												<span class="flash-item new-label">new</span>
+												<span class="flash-item new-label">Mới</span>
 											</div>
 											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
+												<a href="#" class="function-link">Xem nhanh</a>
 											</div>
 										</div>
 										<div class="product-info">
@@ -102,13 +97,9 @@
 			</div>
 
 			<!--Product Categories-->
-			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Product Categories</h3>
-				<div class="wrap-top-banner">
-					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="{{asset('assets/images/fashion-accesories-banner.jpg')}}" width="1170" height="240" alt=""></figure>
-					</a>
-				</div>
+			<div class="wrap-show-advance-info-box style-1" style="display:block">
+				<h3 class="title-box">Danh mục</h3>
+				
 				<div class="wrap-products">
 					<div class="wrap-product-tab tab-style-1">
 						
